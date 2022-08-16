@@ -1,4 +1,5 @@
 clc;
+clear
 funcprot(0);
 r = input("Enter order of matrix- ");
 A = zeros(r,r);
@@ -33,12 +34,11 @@ for o = 1:r
     [z1,z2] = linsolve(P,Q);
     disp("The eigen-vector is: ",z2);
 end
-M = inv(a)*A*a
-disp(M)
-for i =1,r
-    for j=1,r
-        if (abs(M(i,j)-b(i,j)) < 0.01) then
-            disp("Condition is satisfied");
+M = inv(a)*A*a;
+for g =1:r
+    for h=1:r
+        if (abs(M(g,h)-b(g,h)) < 0.01) then
+            printf(" \n element  at (%d,%d) location is matching",g,h);
         else
             disp("Condition is not satisfied");
         end

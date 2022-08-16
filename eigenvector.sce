@@ -33,6 +33,16 @@ for o = 1:r
     [z1,z2] = linsolve(P,Q);
     disp("The eigen-vector is: ",z2);
 end
-
+M = inv(a)*A*a
+disp(M)
+for i =1,r
+    for j=1,r
+        if (abs(M(i,j)-b(i,j)) < 0.01) then
+            disp("Condition is satisfied");
+        else
+            disp("Condition is not satisfied");
+        end
+    end
+end
 
 

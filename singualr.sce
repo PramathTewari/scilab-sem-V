@@ -8,7 +8,7 @@ for i = 1:m
 end
 c = det(A);
 l = round(c) - c
-if (abs(l)>0.01) then
+if (abs(l)< 0.01) then
     disp("The matrix is singular");
 else
     disp("The matrix is non-singular");

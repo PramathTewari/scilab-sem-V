@@ -2,6 +2,14 @@
 clc;
 clear;
 funcprot(0);
+function ortho(evec)
+     [n,m] = size(evec);
+      for i = 1:n
+        for j = 1:n
+            mprintf("\n evec(:,%d)''.evec(:,%d)=%6.2f",i            ,j,evec(:,i)'*evec(:,j))
+        end
+    end
+endfunction
 A = [1, 2*%i; -2*%i, 3];
 B = [2 1 1;1 3 2;3 3 4];
 C = [1-%i, -%i, 3+4*%i; %i 2 4;3-4*%i 4  8];
@@ -54,20 +62,27 @@ if P == pherm then
     if (sum_re == sum_ep) then
         disp("All the eigen values are real for hermitian matrix")
     end
-    /*for i = 1,m
-        evec_o1 = round(evec(:,m)*evec(:,m).');
-        evec_o2 = round(evec(:,m).'*evec(:,m));
-        I_2 = eye(evec(:,m));
-        disp(evec_o1)
-        if evec_o1 == I_2 & eveco2 == I_2  then
-            disp("The eigenvector is orthogonal")
-        else
-            disp("The eigenvector is not orthogonal")
-        end
-    end*/
-    for i = 1:n
-        for j = 1:n
-            mprintf("\n evec(:,%d)''.evec(:,%d)=%6.2f",i,j,evec(:,i)'*evec(:,j))
+    ortho(evec);
+end
+if ptrans == P && conj(P)== P then
+    disp("The eigen vector of real symmetric matrix are orthogonal: ")
+    ortho(evec)
+end
+if porth1 == I & porth2 == I then
+    disp("Eigen-values of orthogonal matrix are +1 or -1:")
+    disp(evals)
+end
+if  punit1 == I & punit2 == I then
+    sz = size(evec)
+    t = 0
+    for i = 1,sz
+        if evals(i) == 1 | evals(i) == -1 then
+            t = t + 1
         end
     end
+    if t == sz then 
+        print("The eigen value of unitary matrix is +1 or -1")
+    disp(evals)
+    end
 end
+

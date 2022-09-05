@@ -1,0 +1,80 @@
+Console
+
+Enter the matrix you want to use: F
+
+0.3333333 0.6666667 0.6666667
+0.6666667 0.3333333 -0.6666667
+0.6666667 -0.6666667 0.3333333
+
+"The matrix you chose is symmetric"
+
+"The matrix you chose is hermitian "
+
+"The matrix you chose is orthogonal"
+
+"The matrix you chose is unitary"
+
+"All the eigen values are real for hermitian matrix"
+
+evec(:,1)'.evec(:,1)= 1.00
+evec(:,1)'.evec(:,2)= 0.00
+evec(:,1)'.evec(:,3)= 0.00
+evec(:,2)'.evec(:,1)= 0.00
+evec(:,2)'.evec(:,2)= 1.00
+evec(:,2)'.evec(:,3)= 0.00
+evec(:,3)'.evec(:,1)= 0.00
+evec(:,3)'.evec(:,2)= 0.00
+evec(:,3)'.evec(:,3)= 1.00
+"The eigen vector of real symmetric matrix are orthogonal: "
+
+evec(:,1)'.evec(:,1)= 1.00
+evec(:,1)'.evec(:,2)= 0.00
+evec(:,1)'.evec(:,3)= 0.00
+evec(:,2)'.evec(:,1)= 0.00
+evec(:,2)'.evec(:,2)= 1.00
+evec(:,2)'.evec(:,3)= 0.00
+evec(:,3)'.evec(:,1)= 0.00
+evec(:,3)'.evec(:,2)= 0.00
+evec(:,3)'.evec(:,3)= 1.00
+"Eigen-values of orthogonal matrix are +1 or-1:"
+
+oo+
+a)
+-O0
+"The eigen values are present in diagonal for a diagonal matrix’
+
+"The eigen value matrix is:"
+
+oo+
+a)
+-O0
+
+"The eigen vector matrix is:"
+
+-0.5773503 -0.7634414 0.2895237
+0.5773503 -0.1309858 0.8059214
+0.5773503 -0.6324555 -0.5163978
+
+"Eigen vectors of diagonal matrix are othogonal:"
+
+evec(:,1)'.evec(:,1)= 1.00
+evec(:,1)'.evec(:,2)= 0.00
+evec(:,1)'.evec(:,3)= 0.00
+evec(:,2)'.evec(:,1)= 0.00
+evec(:,2)'.evec(:,2)= 1.00
+evec(:,2)'.evec(:,3)= 0.00
+evec(:,3)'.evec(:,1)= 0.00
+evec(:,3)'.evec(:,2)= 0.00
+evec(:,3)'.evec(:,3)= 1.00
+"The eigen vector of a unitary matrix are orthogonal: "
+
+evec(:,1)'.evec(:,1)= 1.00
+evec(:,1)'.evec(:,2)= 0.00
+evec(:,1)'.evec(:,3)= 0.00
+evec(:,2)'.evec(:,1)= 0.00
+evec(:,2)'.evec(:,2)= 1.00
+evec(:,2)'.evec(:,3)= 0.00
+evec(:,3)'.evec(:,1)= 0.00
+evec(:,3)'.evec(:,2)= 0.00
+evec(:,3)'.evec(:,3)= 1.00
+

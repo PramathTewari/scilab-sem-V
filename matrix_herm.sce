@@ -21,6 +21,7 @@ G = (1/sqrt(3))*[1 1+%i;1-%i -1 ]
 P = input("Enter the matrix you want to use: ");
 disp(P);
 I = eye(P);
+mat_diag = P*I;
 ptrans = P.';
 pherm = P';
 porth1 = round(real(P*ptrans));
@@ -85,4 +86,24 @@ if  punit1 == I & punit2 == I then
     disp(evals)
     end
 end
-
+[x,y] = spec(mat_diag)
+[p,q] = size(mat_diag)
+flag = 1
+for i =1,p
+        if x(i,i) ~= x(i) then
+            flag = 0
+        end
+end
+if flag == 1 then 
+    disp("The eigen values are present in diagonal for a diagonal matrix")
+    disp("The eigen value matrix is:")
+    disp(y);
+    disp("The eigen vector matrix is:")
+    disp(x);
+    disp("Eigen vectors of diagonal matrix are othogonal:")
+    ortho(x);
+end
+if punit1 == I & punit2 == I then
+       disp("The eigen vector of a unitary matrix are orthogonal: ")
+    ortho(evec)
+end

@@ -17,7 +17,9 @@ end
 V = zeros(n,n);
 H =(((-h^2)/(2*m*d*d))*A + V);
 [V,E]=spec(H);
+disp("The energy of ground state is: ")
 disp(E(1,1));
+disp("The energy of first excited state is: ")
 disp(E(2,2));
 subplot(2,2,1);
 plot(x,V(:,1));
@@ -32,13 +34,13 @@ ylabel("probability density");
 title("plot of probability density");
 xgrid();
 subplot(2,2,3);
-plot(x,(abs(V(:,2))).^2)
+plot(x,(abs(V(:,2))))
 xlabel("distance in angstrom");
-ylabel("probability density");
-title("plot of eigen function");
+ylabel("eigenfunctions");
+title("plot of eigenfunctions");
 xgrid();
 subplot(2,2,4);
-plot(x,(abs(V(:,1))).^2)
+plot(x,(abs(V(:,2))).^2)
 xlabel("distance in angstrom");
 ylabel("probability density");
 title("plot of probability density");

@@ -83,7 +83,7 @@ if  punit1 == I & punit2 == I then
     end
     if t == sz then 
         print("The eigen value of unitary matrix is +1 or -1")
-    disp(evals)
+        disp(evals)
     end
 end
 [x,y] = spec(mat_diag)

@@ -43,9 +43,9 @@ H3 =(-((h^2)/(2*m*d*d))*A) + V3;
 [y1,E1]= spec(H1)
 [y2,E2]= spec(H2)
 [y3,E3]= spec(H3)
-disp(E1(2,2))
-disp(E2(2,2))
-disp(E3(2,2))
+disp("Ground state energy for a1(in eV):",E1(2,2))
+disp("Ground state energy for a2(in eV):",E2(2,2))
+disp("Ground state energy for a3(in eV):",E3(2,2))
 subplot(3,2,1);
 plot(x,y1(:,2));
 xlabel("distance in angstrom");

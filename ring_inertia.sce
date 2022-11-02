@@ -47,7 +47,7 @@ if abs((Ix+Iy)-Iz)<=0.01 then
 else
     disp("Values do not match the theoretical value")
 end
-if ((abs(6*(r^2) - Iz) <= 0.1) && (abs(m*(r^2) - Iy) <= 0.1 ) && (abs(3*(r^2) - Iy) <= 0.1))
+if ((abs(6*(r^2) - Iz) <= 0.1) && (abs(m*(r^2)/2 - Ix) <= 0.1 ) && (abs(3*(r^2) - Iy) <= 0.1))
     disp("The values match theoretical value")
 else
     disp("The values dont match theoretical value")

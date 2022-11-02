@@ -2,46 +2,7 @@ funcprot(0);
 clc;
 clear;
 clf;
-function [i, y] = localmax(x, s)
-    if argn(2)<2
-        s = 0;
-    end
-    if size(x,1)==1
-        x = x(:);
-        wasrow = 1;
-    else 
-        wasrow = 0;
-    end
-    if isreal(x)==0
-        x = abs(x);
-    end
-    xdec = x - [x(2:$); -%inf];
-
-    xinc = x - [-%inf; x(1:$-1)];
-    switch s
-    case 2
-        maxi = (xdec>0).*(xinc>0);
-    case 1
-        maxi =  (xdec>=0).*(xinc>0) + (xdec>0).*(xinc>=0);
-    case 0
-        maxi = (xdec>=0).*(xinc>=0);
-    end
-    i = find(maxi); 
-    if wasrow== 1
-        i = i(:).';
-    else
-        i = i(:);
-    end
-    if argn(1)>1
-        y = x(i);
-        if wasrow==1
-            y = y(:).';
-        else
-            y = y(:);
-        end
-    end
-
-endfunction
+disp("-----------PRAMATH TEWARI 19017----------")
 h = 1973;
 m = 0.511e6;
 e=3.795
@@ -61,11 +22,7 @@ for i=1:n
 end
 H =(-((h^2)/(2*m*d*d))*A) + V;
 [y,E]= spec(H)
-psi1 = abs(y(:,2)).^2
-psi2 = abs(y(:,3)).^2
-[a,b] = localmax(x,psi1)
-[c,d] = localmax(x,psi2)
-disp(a,b)
+
 disp("The energy of electron in ground state of hydrogen atom in eV")
 disp(E(2,2));
 disp("The energy of electron in first excited state of hydrogen atom in eV")
@@ -73,28 +30,34 @@ disp(E(3,3));
 disp("The energy of electron in second state of hydrogen atom in eV")
 disp(E(4,4));
 subplot(2,2,1);
-plot(x,y(:,2));
+plot(x',y(:,2));
 xlabel("distance in angstrom");
 ylabel("ground state eigenfunctions");
 title("plot of eigenfunctions");
 xgrid();
 subplot(2,2,2)
-plot(x,(abs(y(:,2))).^2)
+plot(x',(abs(y(:,2))).^2)
 xlabel("distance in angstrom");
 ylabel("probability density in ground state");
 title("plot of probability density");
 xgrid();
 subplot(2,2,3);
-plot(x,y(:,3))
+plot(x',y(:,3))
 xlabel("distance in angstrom");
 ylabel("eigen function of first excited state");
 title("plot of eigen function");
 xgrid();
 subplot(2,2,4);
-plot(x,(abs(y(:,3))).^2)
+plot(x',(abs(y(:,3))).^2)
 xlabel("distance in angstrom");
 ylabel("probability density of first excited state");
 title("plot of probability density");
 xgrid();
+psi1 = abs(y(:,2)).^2
+psi2 = abs(y(:,3)).^2
+[a,b] = max(psi1)
+[c,d] = max(psi2)
+disp("The maximum value of ground state is: ",x(b))
+disp("The maximum value of first excited state state is:",x(d))
 
 

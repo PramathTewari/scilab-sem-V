@@ -2,6 +2,7 @@ funcprot(0);
 clc;
 clear;
 clf;
+disp("------------Deepam Sharma 19007------------")
 h = 197.3;
 r0 = 0.13149;
 rm = 10;
@@ -67,4 +68,4 @@ xlabel("distance in angstrom");
 ylabel("probability density of second excited state");
 title("plot of probability density second excited state");
 xgrid();
-xname("Pramath Tewari 19017");
+xname("Deepam Sharma 19007");
